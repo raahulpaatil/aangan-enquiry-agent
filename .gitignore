@@ -1,0 +1,13 @@
+# Never commit pricing or secrets
+pricing.md
+case-files/pricing.md
+.env*
+!.env.example
+
+node_modules/
+.next/
+.vercel/
+*.log
+.DS_Store
+*.tsbuildinfo
+next-env.d.ts

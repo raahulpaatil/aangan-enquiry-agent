@@ -16,7 +16,7 @@ Turns a phone-call transcript into a qualified, booked, handed-off enquiry for A
 | Resend | Emails the handoff, to your own address only |
 | HubSpot | Contact, deal and note for the designers |
 | Neon | The call log (the Dashboard reads from here) |
-| Vercel | Hosts the app behind one passcode |
+| Vercel | Hosts the app |
 
 ## Run a test call, start to finish
 
@@ -44,7 +44,6 @@ Keys live in a file called `.env.local` in this folder (never committed). `.env.
 | `CAL_EVENT_TYPE_ID` | The consultation slot | The number at the end of the event type's address |
 | `HUBSPOT_TOKEN` | HubSpot Service Key | HubSpot, Settings, Integrations, Service Keys (scopes: contacts and deals, read and write) |
 | `DATABASE_URL` | Neon connection string | Neon, Connect (use the pooled one) |
-| `APP_PASSCODE` | The passcode for the whole app | You choose it |
 
 On Vercel, the same names go in **Project, Settings, Environment Variables**.
 
@@ -85,10 +84,11 @@ npm run check-env
 npm run dev
 ```
 
-Then open http://localhost:3000 and enter your passcode.
+Then open http://localhost:3000.
 
 ## Safety rules built in
 
+- The app currently has **no passcode**: anyone with the link can run calls. Add one back before sharing the link widely.
 - Emails always go to `SELF_EMAIL`, from Resend's test sender.
 - Everything created in Cal.com and HubSpot is labelled TEST.
 - Secrets and `pricing.md` are in `.gitignore` and are not in the git history.
